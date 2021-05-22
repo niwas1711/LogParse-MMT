@@ -61,13 +61,5 @@ public class ParseLogImpl implements ParseLog
 
 
 
-		public static void main(String[] args)
-			{
-				ParseLogImpl pr = new ParseLogImpl();
-			// pr.parse1();
-		//	Map<String, Long> s=	pr.occurenceMap(sss);
-			//	System.out.println(s);
-			//	s.forEach(System.out::println);
-			}
 
 	}

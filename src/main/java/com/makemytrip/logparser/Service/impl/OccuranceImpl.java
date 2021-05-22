@@ -76,12 +76,6 @@ public class OccuranceImpl implements Occurance
 
 
 
-		public static void main(String[] args) throws ParseException
-			{
-				OccuranceImpl oc = new OccuranceImpl();
 
-				//oc.logtimestamp("2020-11-18 13:00:00","2020-11-18 14:00:00");
-				System.out.println(oc.logoccuranceOR("DESKTOP","DEBUG"));
-			}
 
 	}
