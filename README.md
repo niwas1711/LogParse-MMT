@@ -6,6 +6,8 @@ https://projectlombok.org/setup/intellij
 or 
 https://projectlombok.org/setup/eclipse
 
+Api is created to upload the log files more details available in swagger
+
 
 It a SpringBoot Maven Project you can build it using 
 
@@ -19,6 +21,7 @@ java -jar targer/Logparser-1.0.0.jar
 Project is having Swagger-Ui also which can be access using Below url
 
 http://localhost:8081/MmtLogParser/swagger-ui.html#/
+
 
 
 
