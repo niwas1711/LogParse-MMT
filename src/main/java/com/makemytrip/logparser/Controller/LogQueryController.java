@@ -2,6 +2,8 @@ package com.makemytrip.logparser.Controller;
 
 
 import com.makemytrip.logparser.Service.Occurance;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/")
+@Api(value = "LogQueryController APIs", description = "API for quering the Logs, inputs query", tags = {"LogQueryController API"})
 public class LogQueryController
 	{
 
@@ -21,6 +24,7 @@ public class LogQueryController
 
 
 			@GetMapping("/single")
+			@ApiOperation(value = "Search the occurance of Data using single value ",consumes = "String",produces = "Integer")
 			public ResponseEntity<Integer> occuranceSingle(@PathParam("value")String value)
 				{
 					int res= occuranceservice.logoccurance(value);
@@ -29,6 +33,7 @@ public class LogQueryController
 				}
 
 		@GetMapping("/and/")
+		@ApiOperation(value = "Search the occurance of Data using and Queries value ",consumes = "String",produces = "Integer")
 		public ResponseEntity<Integer> occuranceAnd(@PathParam("value")String value,@PathParam("value")String value2)
 			{
 				int res=	occuranceservice.logoccuranceAND(value,value2);
@@ -37,6 +42,8 @@ public class LogQueryController
 			}
 
 		@GetMapping("/or")
+		@ApiOperation(value = "Search the occurance of Data using Or Queries value ",consumes = "String",produces = "Integer")
+
 		public ResponseEntity<Integer> occuranceOr(@PathParam("value")String value,@PathParam("value2")String value2)
 			{
 				int res=	occuranceservice.logoccuranceOR(value,value2);

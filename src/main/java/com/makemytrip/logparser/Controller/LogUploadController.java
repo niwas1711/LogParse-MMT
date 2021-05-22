@@ -1,6 +1,8 @@
 package com.makemytrip.logparser.Controller;
 
 import com.makemytrip.logparser.Service.FileStorage;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/api/")
+@Api(value = "LogUploadController APIs", description = "API is used to upload the log file , you can upload multiple files also one by one", tags = {"LogUploadController API"})
 public class LogUploadController
 	{
 
@@ -28,6 +31,7 @@ public class LogUploadController
 
 
 		@PostMapping("/uploadFile")
+		@ApiOperation(value = "used to upload the data. ",consumes = "files")
 		public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
 			String fileName = fileStorageService.storeFile(file);
 

@@ -20,3 +20,6 @@ Project is having Swagger-Ui also which can be access using Below url
 
 http://localhost:8081/MmtLogParser/swagger-ui.html#/
 
+
+
+This Project uses the Spring Boot 2.3.1 version So We can dockerized the Application using mvn spring-boot:build-image
